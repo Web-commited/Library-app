@@ -1,7 +1,7 @@
 const books = [
-    { id: 1, title: "Book 1", description: "Description for Book 1" },
-    { id: 2, title: "Book 2", description: "Description for Book 2" },
-    { id: 3, title: "Book 3", description: "Description for Book 3" }
+    { id: 1, title: "Hamlet", description: "Description for Book 1" },
+    { id: 2, title: "Romeo And Juliet", description: "Description for Book 2" },
+    { id: 3, title: "Macbeth", description: "Description for Book 3" }
 ];
 
 const fakeAPI = {
@@ -9,7 +9,7 @@ const fakeAPI = {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(books);
-            }, 1000);
+            }, 100);
         });
     },
     createBook: (book) => {
@@ -17,7 +17,7 @@ const fakeAPI = {
             setTimeout(() => {
                 books.push(book);
                 resolve(book);
-            }, 1000);
+            }, 100);
         });
     },
     deleteBook: (id) => {
@@ -30,7 +30,7 @@ const fakeAPI = {
                 } else {
                     reject("Book not found");
                 }
-            }, 1000);
+            }, 100);
         });
     }
 };

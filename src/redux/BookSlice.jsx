@@ -16,16 +16,16 @@ const BookSlice = createSlice({
     initialState: [],
     reducers: {
         addBook: (state, action) => {
-            state.push({ id: new Date().now(), ...action.payload });
+            state.push({ id: Date.now(), ...action.payload });
         },
-        removeBook: (state, action) => {
-            return state.filter((book) => book.id !== action.payload);
+        deleteBook: (state, action) => {
+            return state.filter((book) => book.id !== action.payload.id);
         }
     },
     extraReducers: (builder) => {
         builder
             .addCase(fetchBooks.fulfilled, (state, action) => {
-                return action.payload;
+                return [...action.payload];
             })
             .addCase(fetchBooks.rejected, (state, action) => {
                 return action.payload;
@@ -33,5 +33,8 @@ const BookSlice = createSlice({
     }
 });
 
-export const { addBook, removeBook } = BookSlice.actions;
+
+
+
+export const { addBook, deleteBook } = BookSlice.actions;
 export default BookSlice.reducer;

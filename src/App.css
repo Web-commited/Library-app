@@ -68,3 +68,19 @@ li {
 li:last-child {
   border-bottom: none;
 }
+
+.description{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  color: transparent;
+  position: absolute;
+  left: 50%;
+  transition: color 0.3s;
+}
+
+.description:hover{
+  color: #4a90e2;
+  cursor: pointer;
+}
